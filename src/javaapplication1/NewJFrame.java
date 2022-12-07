@@ -104,7 +104,7 @@ public class NewJFrame extends javax.swing.JFrame {
         nextTurnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerBidDieFaceInputActionPerformed(evt);
-                /**
+                /*
                  * AI automatically make bet after the user press the button
                  */
                 a = (int) (Math.random() * (max - min + 1) + min);
@@ -116,7 +116,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " +
                             lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
                 }
-                else if (Inc_Choice == 1) {
+                else {
                     lastNumDieAccepted++;
                     System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " +
                             lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
@@ -137,8 +137,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
                 playerBidSubmitButtonActionPerformed(evt);
 
-                diceFaceInput = Integer.valueOf(playerBidDieFaceInput.getText());
-                numDieInput = Integer.valueOf(playerBidNumberOfDieInput.getText());
+                diceFaceInput = Integer.parseInt(playerBidDieFaceInput.getText());
+                numDieInput = Integer.parseInt(playerBidNumberOfDieInput.getText());
 
                 if ((diceFaceInput > lastDiceFaceAccepted) && (numDieInput == lastNumDieAccepted))
                 {
@@ -295,15 +295,14 @@ public class NewJFrame extends javax.swing.JFrame {
         playerBidNumberOfDiejLabel.setText("Number of Die");
 
         //menu text and button add
-        //TODO make all of these menu button do something
-        hostGameMenuItem.setText("Host Game");
-        jMenuBar1.add(hostGameMenuItem);
-
-        joinGameMenuItem.setText("Join Game");
-        jMenuBar1.add(joinGameMenuItem);
-
-        exitGameMenuItem.setText("Exit Game");
-        jMenuBar1.add(exitGameMenuItem);
+//        hostGameMenuItem.setText("Host Game");
+//        jMenuBar1.add(hostGameMenuItem);
+//
+//        joinGameMenuItem.setText("Join Game");
+//        jMenuBar1.add(joinGameMenuItem);
+//
+//        exitGameMenuItem.setText("Exit Game");
+//        jMenuBar1.add(exitGameMenuItem);
 
         setJMenuBar(jMenuBar1);
 
@@ -713,16 +712,8 @@ public class NewJFrame extends javax.swing.JFrame {
             }
 
             //catches some common errors or exceptions
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                 UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         }
@@ -730,7 +721,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         NewJFrame gui = new NewJFrame();
         Dice die = new Dice();
-        die.setDiceImage();
+        die.setPlayerDiceImage();
 
 
 
