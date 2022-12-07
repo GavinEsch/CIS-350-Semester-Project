@@ -1,5 +1,3 @@
-package javaapplication1;
-
 import javax.swing.*;
 
 import java.util.HashMap;
@@ -22,7 +20,8 @@ public class NewJFrame extends javax.swing.JFrame {
     int a = 0;
     int Inc_Choice = 0;
     int AI_order = 0;
-
+    final int[] DICENUMBERS = new int[25];
+    final int[] DIECOUNT = new int[7];
 
     /**
      * Creates new form NewJFrame
@@ -30,8 +29,8 @@ public class NewJFrame extends javax.swing.JFrame {
     public NewJFrame() {
         //TODO
         initComponents();
-    }
 
+    }
 
     @SuppressWarnings("unchecked")
 
@@ -162,7 +161,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 /**
                  * Challenge the AIs
                  */
-                
                 JOptionPane.showMessageDialog(null, "Congratulation!");
             }
         });
@@ -543,7 +541,10 @@ public class NewJFrame extends javax.swing.JFrame {
 
         NewJFrame gui = new NewJFrame();
         Dice die = new Dice();
-        die.setPlayerDiceImage();
+
+        gui.pack();
+        gui.setVisible(true);
+        die.setDiceImage();
     }
 
 
