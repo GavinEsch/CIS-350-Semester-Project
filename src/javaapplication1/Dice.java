@@ -1,3 +1,5 @@
+package javaapplication1;
+
 import javax.swing.*;
 
 public class Dice extends NewJFrame{
@@ -13,12 +15,18 @@ public class Dice extends NewJFrame{
      * @return - random value from 1 - 6
      */
     public Icon[] DicePhoto() {
-        ImageIcon die1 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die1.png");
-        ImageIcon die2 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die2.png");
-        ImageIcon die3 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die3.png");
-        ImageIcon die4 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die4.png");
-        ImageIcon die5 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die5.png");
-        ImageIcon die6 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die6.png");
+        ImageIcon die1 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die1.png");
+        ImageIcon die2 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die2.png");
+        ImageIcon die3 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die3.png");
+        ImageIcon die4 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die4.png");
+        ImageIcon die5 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die5.png");
+        ImageIcon die6 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die6.png");
 
         getDieNumber();
         Icon[] picDie = new Icon[25];
