@@ -1,3 +1,5 @@
+package javaapplication1;
+
 import javax.swing.*;
 
 import java.util.HashMap;
@@ -541,10 +543,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         NewJFrame gui = new NewJFrame();
         Dice die = new Dice();
-
-        gui.pack();
-        gui.setVisible(true);
-        die.setDiceImage();
+        die.setPlayerDiceImage();
     }
 
 
