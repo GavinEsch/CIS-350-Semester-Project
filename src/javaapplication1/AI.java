@@ -11,24 +11,7 @@ public class AI{
         int maxDieFace  = 6;
         int minDieFace = 1;
         int Inc_Choice;
-        if (lastDiceFaceAccepted < 1){
-            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not less than 1");
-        }
 
-        //Check to see if the lastDiceFaceAccepted parameter is greater than 6
-        if (lastDiceFaceAccepted > 6){
-            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not greater than 6");
-        }
-
-        //Check to see if the lastNumDieAccepted parameter less than 1
-        if (lastNumDieAccepted < 1){
-            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not less than 1");
-        }
-
-        //Check to see if the lastNumDieAccepted parameter is greater than 25
-        if (lastNumDieAccepted > 25){
-            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not greater than 25");
-        }
 
         randPicker = randomNumberGen(maxDieCount,minDieCount);
 
@@ -53,6 +36,24 @@ public class AI{
 
         this.lastDiceFaceAccepted = lastDiceFaceAccepted;
         this.lastNumDieAccepted = lastNumDieAccepted;
+        if (lastDiceFaceAccepted < 1){
+            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not less than 1");
+        }
+
+        //Check to see if the lastDiceFaceAccepted parameter is greater than 6
+        if (lastDiceFaceAccepted > 6){
+            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not greater than 6");
+        }
+
+        //Check to see if the lastNumDieAccepted parameter less than 1
+        if (lastNumDieAccepted < 1){
+            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not less than 1");
+        }
+
+        //Check to see if the lastNumDieAccepted parameter is greater than 25
+        if (lastNumDieAccepted > 25){
+            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not greater than 25");
+        }
         /*
          * JUnitTest Section for nextTurn method
          */
@@ -62,6 +63,10 @@ public class AI{
     public int getLastDiceFaceAccepted(){return lastDiceFaceAccepted;}
 
     public int getLastNumDieAccepted(){return lastNumDieAccepted;}
+
+    public void setLastDiceFaceAccepted(int lastDiceFaceAccepted){this.lastDiceFaceAccepted = lastDiceFaceAccepted;}
+
+    public void setLastNumDieAccepted(int lastNumDieAccepted){this.lastNumDieAccepted = lastNumDieAccepted;}
 
     public int randomNumberGen(int max, int min) {
         int rand = 0;

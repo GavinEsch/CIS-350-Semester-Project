@@ -99,4 +99,60 @@ class JUnitTest {
             a12.randomNumberGen(-9,15);
         });
     }
+
+    @Test
+    public void testChallengePlayer() {
+        AI a1 = new AI();
+        int[] DICENUMBERS = {0,1,4,6,3,6,3};
+        Assertions.assertTrue(a1.challengePlayer(4,5,DICENUMBERS));
+        Assertions.assertTrue(a1.challengePlayer(0,5,DICENUMBERS));
+        Assertions.assertFalse(a1.challengePlayer(3,5,DICENUMBERS));
+
+    }
+    @Test
+    public void testLastDiceFaceAccepted() {
+        AI a1 = new AI();
+        a1.setLastDiceFaceAccepted(5);
+        Assertions.assertEquals(a1.getLastDiceFaceAccepted(),5);
+    }
+    @Test
+    public void testLastNumDieAccepted() {
+        AI a1 = new AI();
+        a1.setLastNumDieAccepted(5);
+        Assertions.assertEquals(a1.getLastNumDieAccepted(),5);
+    }
+    @Test
+    public void setPlayerDiceImage() {
+        NewJFrame test = new NewJFrame();
+        test.setPlayerDiceImage();
+        Assertions.assertNotNull(test.player1Die1);
+        Assertions.assertNotNull(test.player1Die2);
+        Assertions.assertNotNull(test.player1Die3);
+        Assertions.assertNotNull(test.player1Die4);
+        Assertions.assertNotNull(test.player1Die5);
+
+        Assertions.assertNotNull(test.player2Die1);
+        Assertions.assertNotNull(test.player2Die2);
+        Assertions.assertNotNull(test.player2Die3);
+        Assertions.assertNotNull(test.player2Die4);
+        Assertions.assertNotNull(test.player2Die5);
+
+        Assertions.assertNotNull(test.player3Die1);
+        Assertions.assertNotNull(test.player3Die2);
+        Assertions.assertNotNull(test.player3Die3);
+        Assertions.assertNotNull(test.player3Die4);
+        Assertions.assertNotNull(test.player3Die5);
+
+        Assertions.assertNotNull(test.player4Die1);
+        Assertions.assertNotNull(test.player4Die2);
+        Assertions.assertNotNull(test.player4Die3);
+        Assertions.assertNotNull(test.player4Die4);
+        Assertions.assertNotNull(test.player4Die5);
+
+        Assertions.assertNotNull(test.player5Die1);
+        Assertions.assertNotNull(test.player5Die2);
+        Assertions.assertNotNull(test.player5Die3);
+        Assertions.assertNotNull(test.player5Die4);
+        Assertions.assertNotNull(test.player5Die5);
+    }
 }
