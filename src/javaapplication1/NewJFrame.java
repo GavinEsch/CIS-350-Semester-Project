@@ -340,6 +340,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
+
         //start of setting the layout of the gui
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
