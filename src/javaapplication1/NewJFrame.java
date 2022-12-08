@@ -2,6 +2,7 @@ package javaapplication1;
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
@@ -21,6 +22,9 @@ public class NewJFrame extends javax.swing.JFrame {
     int AI_order = 2;
     final int[] DICENUMBERS = new int[25];
     final int[] DIECOUNT = new int[7];
+
+    //dice color change
+    int RGB = 0;
 
     /**
      * Creates new form NewJFrame
@@ -160,7 +164,7 @@ public class NewJFrame extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerBidDieFaceInputActionPerformed(evt);
                 AI ai = new AI();
-                Dice dice = new Dice();
+
                 boolean ChallengeTF = ai.challengePlayer(lastDiceFaceAccepted, lastNumDieAccepted);
 
                 if(ChallengeTF) {
@@ -169,7 +173,30 @@ public class NewJFrame extends javax.swing.JFrame {
                 else {
                     JOptionPane.showMessageDialog(null, "Maybe Next Time!");
                 }
-                dice.setAIDice();
+                RGB = 255;
+                player2Die1.setBackground(Color.WHITE);
+                player2Die2.setBackground(Color.WHITE);
+                player2Die3.setBackground(Color.WHITE);
+                player2Die4.setBackground(Color.WHITE);
+                player2Die5.setBackground(Color.WHITE);
+                
+                player3Die1.setBackground(Color.WHITE);
+                player3Die2.setBackground(Color.WHITE);
+                player3Die3.setBackground(Color.WHITE);
+                player3Die4.setBackground(Color.WHITE);
+                player3Die5.setBackground(Color.WHITE);
+                
+                player4Die1.setBackground(Color.WHITE);
+                player4Die2.setBackground(Color.WHITE);
+                player4Die3.setBackground(Color.WHITE);
+                player4Die4.setBackground(Color.WHITE);
+                player4Die5.setBackground(Color.WHITE);
+                
+                player5Die1.setBackground(Color.WHITE);
+                player5Die2.setBackground(Color.WHITE);
+                player5Die3.setBackground(Color.WHITE);
+                player5Die4.setBackground(Color.WHITE);
+                player5Die5.setBackground(Color.WHITE);
 
             }
         });
@@ -213,83 +240,83 @@ public class NewJFrame extends javax.swing.JFrame {
         player1Die5.setOpaque(true);
         player1Die5.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player2Die1.setBackground(new java.awt.Color(255, 255, 255));
+        player2Die1.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player2Die1.setOpaque(true);
         player2Die1.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player5Die1.setBackground(new java.awt.Color(255, 255, 255));
+        player5Die1.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player5Die1.setOpaque(true);
         player5Die1.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player2Die3.setBackground(new java.awt.Color(255, 255, 255));
+        player2Die3.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player2Die3.setOpaque(true);
         player2Die3.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player2Die4.setBackground(new java.awt.Color(255, 255, 255));
+        player2Die4.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player2Die4.setOpaque(true);
         player2Die4.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player2Die5.setBackground(new java.awt.Color(255, 255, 255));
+        player2Die5.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player2Die5.setOpaque(true);
         player2Die5.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player2Die2.setBackground(new java.awt.Color(255, 255, 255));
+        player2Die2.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player2Die2.setOpaque(true);
         player2Die2.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player5Die2.setBackground(new java.awt.Color(255, 255, 255));
+        player5Die2.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player5Die2.setOpaque(true);
         player5Die2.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player5Die3.setBackground(new java.awt.Color(255, 255, 255));
+        player5Die3.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player5Die3.setOpaque(true);
         player5Die3.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player5Die4.setBackground(new java.awt.Color(255, 255, 255));
+        player5Die4.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player5Die4.setOpaque(true);
         player5Die4.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player5Die5.setBackground(new java.awt.Color(255, 255, 255));
+        player5Die5.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player5Die5.setOpaque(true);
         player5Die5.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player4Die1.setBackground(new java.awt.Color(255, 255, 255));
+        player4Die1.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player4Die1.setOpaque(true);
         player4Die1.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player3Die2.setBackground(new java.awt.Color(255, 255, 255));
+        player3Die2.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player3Die2.setOpaque(true);
         player3Die2.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player3Die3.setBackground(new java.awt.Color(255, 255, 255));
+        player3Die3.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player3Die3.setOpaque(true);
         player3Die3.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player3Die4.setBackground(new java.awt.Color(255, 255, 255));
+        player3Die4.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player3Die4.setOpaque(true);
         player3Die4.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player3Die5.setBackground(new java.awt.Color(255, 255, 255));
+        player3Die5.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player3Die5.setOpaque(true);
         player3Die5.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player3Die1.setBackground(new java.awt.Color(255, 255, 255));
+        player3Die1.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player3Die1.setOpaque(true);
         player3Die1.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player4Die2.setBackground(new java.awt.Color(255, 255, 255));
+        player4Die2.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player4Die2.setOpaque(true);
         player4Die2.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player4Die3.setBackground(new java.awt.Color(255, 255, 255));
+        player4Die3.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player4Die3.setOpaque(true);
         player4Die3.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player4Die4.setBackground(new java.awt.Color(255, 255, 255));
+        player4Die4.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player4Die4.setOpaque(true);
         player4Die4.setPreferredSize(new java.awt.Dimension(80, 80));
 
-        player4Die5.setBackground(new java.awt.Color(255, 255, 255));
+        player4Die5.setBackground(new java.awt.Color(RGB, RGB, RGB));
         player4Die5.setOpaque(true);
         player4Die5.setPreferredSize(new java.awt.Dimension(80, 80));
 
@@ -500,6 +527,8 @@ public class NewJFrame extends javax.swing.JFrame {
                                                 .addComponent(challengePlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(37, 37, 37))))
         );
+        Dice die = new Dice();
+        setPlayerDiceImage();
 
         pack();
         setVisible(true);
@@ -549,8 +578,47 @@ public class NewJFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         NewJFrame gui = new NewJFrame();
+
+    }
+
+    public void setPlayerDiceImage() {
+ //       DicePic = DicePhoto();
         Dice die = new Dice();
-        die.setPlayerDiceImage();
+        Icon[] DicePic = die.DicePhoto();
+
+        player1Die1.setIcon(DicePic[0]);
+        player1Die2.setIcon(DicePic[1]);
+        player1Die3.setIcon(DicePic[2]);
+        player1Die4.setIcon(DicePic[3]);
+        player1Die5.setIcon(DicePic[4]);
+
+//        //gets pictures of javaapplication1.dice for player2 javaapplication1.dice
+        player2Die1.setIcon(DicePic[5]);
+        player2Die2.setIcon(DicePic[6]);
+        player2Die3.setIcon(DicePic[7]);
+        player2Die4.setIcon(DicePic[8]);
+        player2Die5.setIcon(DicePic[9]);
+//
+//        //gets pictures of javaapplication1.dice for player3 javaapplication1.dice
+        player3Die1.setIcon(DicePic[10]);
+        player3Die2.setIcon(DicePic[11]);
+        player3Die3.setIcon(DicePic[12]);
+        player3Die4.setIcon(DicePic[13]);
+        player3Die5.setIcon(DicePic[14]);
+
+//        //gets pictures of javaapplication1.dice for player4 javaapplication1.dice
+        player4Die1.setIcon(DicePic[15]);
+        player4Die2.setIcon(DicePic[16]);
+        player4Die3.setIcon(DicePic[17]);
+        player4Die4.setIcon(DicePic[18]);
+        player4Die5.setIcon(DicePic[19]);
+//
+//        //gets pictures of javaapplication1.dice for player5 javaapplication1.dice
+        player5Die1.setIcon(DicePic[20]);
+        player5Die2.setIcon(DicePic[21]);
+        player5Die3.setIcon(DicePic[22]);
+        player5Die4.setIcon(DicePic[23]);
+        player5Die5.setIcon(DicePic[24]);
     }
 
 

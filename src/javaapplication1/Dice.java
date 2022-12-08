@@ -2,7 +2,7 @@ package javaapplication1;
 
 import javax.swing.*;
 
-public class Dice extends NewJFrame{
+public class Dice{
 
     final int[] DICENUMBERS = new int[25];
     Icon[] DicePic;
@@ -80,46 +80,7 @@ public class Dice extends NewJFrame{
         return DIECOUNT;
     }
 
-    public void setPlayerDiceImage() {
-        DicePic = DicePhoto();
 
-        player1Die1.setIcon(DicePic[0]);
-        player1Die2.setIcon(DicePic[1]);
-        player1Die3.setIcon(DicePic[2]);
-        player1Die4.setIcon(DicePic[3]);
-        player1Die5.setIcon(DicePic[4]);
-    }
-
-        public void setAIDice() {
-
-//        //gets pictures of javaapplication1.dice for player2 javaapplication1.dice
-        player2Die1.setIcon(DicePic[5]);
-        player2Die2.setIcon(DicePic[6]);
-        player2Die3.setIcon(DicePic[7]);
-        player2Die4.setIcon(DicePic[8]);
-        player2Die5.setIcon(DicePic[9]);
-//
-//        //gets pictures of javaapplication1.dice for player3 javaapplication1.dice
-        player3Die1.setIcon(DicePic[10]);
-        player3Die2.setIcon(DicePic[11]);
-        player3Die3.setIcon(DicePic[12]);
-        player3Die4.setIcon(DicePic[13]);
-        player3Die5.setIcon(DicePic[14]);
-
-//        //gets pictures of javaapplication1.dice for player4 javaapplication1.dice
-        player4Die1.setIcon(DicePic[15]);
-        player4Die2.setIcon(DicePic[16]);
-        player4Die3.setIcon(DicePic[17]);
-        player4Die4.setIcon(DicePic[18]);
-        player4Die5.setIcon(DicePic[19]);
-//
-//        //gets pictures of javaapplication1.dice for player5 javaapplication1.dice
-        player5Die1.setIcon(DicePic[20]);
-        player5Die2.setIcon(DicePic[21]);
-        player5Die3.setIcon(DicePic[22]);
-        player5Die4.setIcon(DicePic[23]);
-        player5Die5.setIcon(DicePic[24]);
-    }
 
     public int[] getDiceNumbers() {
         return DICENUMBERS;
