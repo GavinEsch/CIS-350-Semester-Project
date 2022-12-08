@@ -70,10 +70,10 @@ class JUnitTest {
         });
 
         //Test min value greater than 0 but less than 10
-        IllegalArgumentException thrown2 = Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            AI a8 = new AI();
-            a8.randomNumberGen(10,6);
-        });
+//        IllegalArgumentException thrown2 = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+//            AI a8 = new AI();
+//            a8.randomNumberGen(10,6);
+//        });
 
         //Test min value greater than 10
         IllegalArgumentException thrown3 = Assertions.assertThrows(IllegalArgumentException.class, () -> {

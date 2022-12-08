@@ -11,6 +11,24 @@ public class AI{
         int maxDieFace  = 6;
         int minDieFace = 1;
         int Inc_Choice;
+        if (lastDiceFaceAccepted < 1){
+            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not less than 1");
+        }
+
+        //Check to see if the lastDiceFaceAccepted parameter is greater than 6
+        if (lastDiceFaceAccepted > 6){
+            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not greater than 6");
+        }
+
+        //Check to see if the lastNumDieAccepted parameter less than 1
+        if (lastNumDieAccepted < 1){
+            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not less than 1");
+        }
+
+        //Check to see if the lastNumDieAccepted parameter is greater than 25
+        if (lastNumDieAccepted > 25){
+            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not greater than 25");
+        }
 
         randPicker = randomNumberGen(maxDieCount,minDieCount);
 
@@ -32,30 +50,14 @@ public class AI{
         else {
             lastNumDieAccepted++;
         }
+
         this.lastDiceFaceAccepted = lastDiceFaceAccepted;
         this.lastNumDieAccepted = lastNumDieAccepted;
         /*
          * JUnitTest Section for nextTurn method
          */
         //Check to see if the lastDiceFaceAccepted parameter less than 1
-        if (lastDiceFaceAccepted < 1){
-            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not less than 1");
-        }
 
-        //Check to see if the lastDiceFaceAccepted parameter is greater than 6
-        if (lastDiceFaceAccepted > 6){
-            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not greater than 6");
-        }
-
-        //Check to see if the lastNumDieAccepted parameter less than 1
-        if (lastNumDieAccepted < 1){
-            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not less than 1");
-        }
-
-        //Check to see if the lastNumDieAccepted parameter is greater than 25
-        if (lastNumDieAccepted > 25){
-            throw new IllegalArgumentException("The lastDiceFaceAccepted parameter can not greater than 25");
-        }
     }
     public int getLastDiceFaceAccepted(){return lastDiceFaceAccepted;}
 
