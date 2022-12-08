@@ -1,8 +1,11 @@
+package javaapplication1;
+
 import javax.swing.*;
 
 public class Dice extends NewJFrame{
 
     final int[] DICENUMBERS = new int[25];
+    Icon[] DicePic;
     public void dicePicture(){
 
     }
@@ -13,12 +16,19 @@ public class Dice extends NewJFrame{
      * @return - random value from 1 - 6
      */
     public Icon[] DicePhoto() {
-        ImageIcon die1 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die1.png");
-        ImageIcon die2 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die2.png");
-        ImageIcon die3 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die3.png");
-        ImageIcon die4 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die4.png");
-        ImageIcon die5 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die5.png");
-        ImageIcon die6 = new ImageIcon("C:\\Users\\Lam Thu Phung\\IdeaProjects\\LiarDice_GUI\\src\\main\\java\\Die6.png");
+        //TODO
+        ImageIcon die1 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die1.png");
+        ImageIcon die2 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die2.png");
+        ImageIcon die3 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die3.png");
+        ImageIcon die4 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die4.png");
+        ImageIcon die5 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die5.png");
+        ImageIcon die6 = new ImageIcon("C:\\Users\\gavin\\IdeaProjects\\Liars Dice\\" +
+                "CIS-350-Semester-Project\\src\\javaapplication1\\dice\\Die6.png");
 
         getDieNumber();
         Icon[] picDie = new Icon[25];
@@ -70,14 +80,17 @@ public class Dice extends NewJFrame{
         return DIECOUNT;
     }
 
-    public void setDiceImage() {
-        Icon[] DicePic = DicePhoto();
+    public void setPlayerDiceImage() {
+        DicePic = DicePhoto();
 
         player1Die1.setIcon(DicePic[0]);
         player1Die2.setIcon(DicePic[1]);
         player1Die3.setIcon(DicePic[2]);
         player1Die4.setIcon(DicePic[3]);
         player1Die5.setIcon(DicePic[4]);
+    }
+
+        public void setAIDice() {
 
 //        //gets pictures of javaapplication1.dice for player2 javaapplication1.dice
         player2Die1.setIcon(DicePic[5]);

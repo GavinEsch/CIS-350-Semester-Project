@@ -1,3 +1,5 @@
+package javaapplication1;
+
 import javax.swing.*;
 
 import java.util.HashMap;
@@ -104,12 +106,24 @@ public class NewJFrame extends javax.swing.JFrame {
 
                 if (Inc_Choice == 0) {
                     lastDiceFaceAccepted++;
-                    System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " + lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
+                    System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " +
+                            lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
+
+                    previousBidTextDisplay.setText("Your current bid is:\n\tDice Face = [ " + lastDiceFaceAccepted +
+                            " ]\n\tNumber of Dice = [ " + lastNumDieAccepted + " ]" + "\n\nLast accepted bid was" +
+                            ":\n\tDice Face = [ " + lastDiceFaceAccepted + " ]\n\tNumber of Dice = [ "
+                            + lastNumDieAccepted + " ]");
                 }
                 else if (Inc_Choice == 1) {
                     lastNumDieAccepted++;
-                    System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " + lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
+                    System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " +
+                            lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
+                    previousBidTextDisplay.setText("Your current bid is:\n\tDice Face = [ " + lastDiceFaceAccepted +
+                            " ]\n\tNumber of Dice = [ " + lastNumDieAccepted + " ]" + "\n\nLast accepted bid was" +
+                            ":\n\tDice Face = [ " + lastDiceFaceAccepted + " ]\n\tNumber of Dice = [ "
+                            + lastNumDieAccepted + " ]");
                 }
+
 
                 AI_order++;
                 if (AI_order == 4) AI_order = 0;
@@ -541,10 +555,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         NewJFrame gui = new NewJFrame();
         Dice die = new Dice();
-
-        gui.pack();
-        gui.setVisible(true);
-        die.setDiceImage();
+        die.setPlayerDiceImage();
     }
 
 
