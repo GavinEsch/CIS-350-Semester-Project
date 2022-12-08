@@ -100,9 +100,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 /**
                  * AI automatically make bet after the user press the button
                  */
-                a = (int) (Math.random() * (max - min + 1) + min);
-                if (a % 2 == 0) Inc_Choice = 0;
-                else Inc_Choice = 1;
 
                 if (Inc_Choice == 0) {
                     lastDiceFaceAccepted++;

@@ -120,4 +120,8 @@ public class Dice extends NewJFrame{
         player5Die4.setIcon(DicePic[23]);
         player5Die5.setIcon(DicePic[24]);
     }
+
+    public int[] getDiceNumbers() {
+        return DICENUMBERS;
+    }
 }
