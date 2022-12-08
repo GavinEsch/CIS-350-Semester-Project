@@ -15,13 +15,10 @@ import java.lang.Math;
  * @author Gavin, Lam, Connor, Camryn
  */
 public class NewJFrame extends javax.swing.JFrame {
-    int lastDiceFaceAccepted = 0;
-    int lastNumDieAccepted = 0;
-    int min = 0;
-    int max = 10;
-    int a = 0;
-    int Inc_Choice = 0;
-    int AI_order = 0;
+    int lastDiceFaceAccepted = 1;
+    int lastNumDieAccepted = 1;
+    String AI_Difficulty = "Easy";
+    int AI_order = 2;
     final int[] DICENUMBERS = new int[25];
     final int[] DIECOUNT = new int[7];
 
@@ -97,25 +94,16 @@ public class NewJFrame extends javax.swing.JFrame {
         nextTurnButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerBidDieFaceInputActionPerformed(evt);
-                /**
-                 * AI automatically make bet after the user press the button
-                 */
+                AI ai_challenge = new AI();
 
-                if (Inc_Choice == 0) {
-                    lastDiceFaceAccepted++;
-                    System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " +
-                            lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
-
-                    previousBidTextDisplay.setText("Your current bid is:\n\tDice Face = [ " + lastDiceFaceAccepted +
-                            " ]\n\tNumber of Dice = [ " + lastNumDieAccepted + " ]" + "\n\nLast accepted bid was" +
-                            ":\n\tDice Face = [ " + lastDiceFaceAccepted + " ]\n\tNumber of Dice = [ "
-                            + lastNumDieAccepted + " ]");
+                if(AI_order == 1) {
+                    JOptionPane.showMessageDialog(null, "It is your turn!");
                 }
-                else if (Inc_Choice == 1) {
-                    lastNumDieAccepted++;
-                    System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " +
-                            lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
-                    previousBidTextDisplay.setText("Your current bid is:\n\tDice Face = [ " + lastDiceFaceAccepted +
+                else if (AI_Difficulty.equalsIgnoreCase("Easy")){
+                    ai_challenge.nextTurn(lastDiceFaceAccepted,lastNumDieAccepted);
+                    lastNumDieAccepted = ai_challenge.getLastNumDieAccepted();
+                    lastDiceFaceAccepted = ai_challenge.getLastDiceFaceAccepted();
+                    previousBidTextDisplay.setText("Player " + AI_order + " current bid is:\n\tDice Face = [ " + lastDiceFaceAccepted +
                             " ]\n\tNumber of Dice = [ " + lastNumDieAccepted + " ]" + "\n\nLast accepted bid was" +
                             ":\n\tDice Face = [ " + lastDiceFaceAccepted + " ]\n\tNumber of Dice = [ "
                             + lastNumDieAccepted + " ]");
@@ -123,7 +111,9 @@ public class NewJFrame extends javax.swing.JFrame {
 
 
                 AI_order++;
-                if (AI_order == 4) AI_order = 0;
+                if (AI_order == 6) {
+                    AI_order = 1;
+                }
             }
         });
 

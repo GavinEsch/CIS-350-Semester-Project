@@ -1,40 +1,47 @@
 package javaapplication1;
 
-public class AI {
-    public void nextTurn(int lastDiceFaceAccepted, int lastNumDieAccepted, int AI_order) {
-        int max = 10;
-        int min = 0;
+public class AI{
+    int lastDiceFaceAccepted;
+    int lastNumDieAccepted;
+    public void nextTurn(int lastDiceFaceAccepted, int lastNumDieAccepted) {
+        int maxDieCount = 10;
+        int minDieCount = 0;
+        int randPicker;
+        int maxDieFace  = 6;
+        int minDieFace = 1;
         int Inc_Choice;
 
-        int a = (int) (Math.random() * (max - min + 1) + min);
+        randPicker = randomNumberGen(maxDieCount,minDieCount);
 
-        if (a % 2 == 0) Inc_Choice = 0;
+        if (randPicker % 2 == 0) Inc_Choice = 0;
         else Inc_Choice = 1;
 
 
         if (Inc_Choice == 0) {
-            lastDiceFaceAccepted++;
-            System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " +
-                    lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
-
-            previousBidTextDisplay.setText("Your current bid is:\n\tDice Face = [ " + lastDiceFaceAccepted +
-                    " ]\n\tNumber of Dice = [ " + lastNumDieAccepted + " ]" + "\n\nLast accepted bid was" +
-                    ":\n\tDice Face = [ " + lastDiceFaceAccepted + " ]\n\tNumber of Dice = [ "
-                    + lastNumDieAccepted + " ]");
+            if(lastDiceFaceAccepted == 6) {
+                lastDiceFaceAccepted = 1;
+                lastNumDieAccepted++;
+            }
+            else {
+                int temp = lastDiceFaceAccepted;
+                while(temp >= lastDiceFaceAccepted)
+                    lastDiceFaceAccepted = randomNumberGen(maxDieFace, minDieFace);
+            }
         }
         else {
             lastNumDieAccepted++;
-            System.out.println("AI [" + (AI_order+2) + "]" + " played bid: Dice Face = [ " +
-                    lastDiceFaceAccepted + " ]\n\t\t\t\tNumber of Dice = [ " + lastNumDieAccepted + " ]");
-            previousBidTextDisplay.setText("Your current bid is:\n\tDice Face = [ " + lastDiceFaceAccepted +
-                    " ]\n\tNumber of Dice = [ " + lastNumDieAccepted + " ]" + "\n\nLast accepted bid was" +
-                    ":\n\tDice Face = [ " + lastDiceFaceAccepted + " ]\n\tNumber of Dice = [ "
-                    + lastNumDieAccepted + " ]");
         }
+        this.lastDiceFaceAccepted = lastDiceFaceAccepted;
+        this.lastNumDieAccepted = lastNumDieAccepted;
+    }
+    public int getLastDiceFaceAccepted(){return lastDiceFaceAccepted;}
 
+    public int getLastNumDieAccepted(){return lastNumDieAccepted;}
 
-
-
+    public int randomNumberGen(int max, int min) {
+        int rand = 0;
+        rand = (int) (Math.random() * (max - min + 1) + min);
+        return rand;
     }
 
     public void bidSubmit() {
