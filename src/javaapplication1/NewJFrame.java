@@ -100,7 +100,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 playerBidDieFaceInputActionPerformed(evt);
                 AI ai_challenge = new AI();
 
-                //5% chance that the AI challenges
+                //5% chan
                 if(Math.random() * 100 < 5) {
                     AI die = new AI();
 
