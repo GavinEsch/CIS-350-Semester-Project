@@ -49,8 +49,17 @@ public class AI{
 
     }
 
-    public void challengePlayer() {
+    public boolean challengePlayer(int lastDiceFaceAccepted, int lastNumDieAccepted) {
+        boolean result = true;
 
+        Dice dice = new Dice();
+        int[] DIECOUNT = dice.getDiceNumbers();
+
+        if(DIECOUNT[lastDiceFaceAccepted] < lastNumDieAccepted) {
+            result = false;
+        }
+
+        return result;
 
     }
 

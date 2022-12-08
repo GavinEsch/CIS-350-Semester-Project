@@ -159,10 +159,18 @@ public class NewJFrame extends javax.swing.JFrame {
         challengePlayer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerBidDieFaceInputActionPerformed(evt);
-                /**
-                 * Challenge the AIs
-                 */
-                JOptionPane.showMessageDialog(null, "Congratulation!");
+                AI ai = new AI();
+                Dice dice = new Dice();
+                boolean ChallengeTF = ai.challengePlayer(lastDiceFaceAccepted, lastNumDieAccepted);
+
+                if(ChallengeTF) {
+                    JOptionPane.showMessageDialog(null, "Congratulation!");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Maybe Next Time!");
+                }
+                dice.setAIDice();
+
             }
         });
 
