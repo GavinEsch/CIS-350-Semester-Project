@@ -82,6 +82,7 @@ public class Dice{
 
 
 
+
     public int[] getDiceNumbers() {
         return DICENUMBERS;
     }

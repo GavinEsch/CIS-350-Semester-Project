@@ -1,6 +1,7 @@
 package javaapplication1;
 
 public class AI{
+
     int lastDiceFaceAccepted;
     int lastNumDieAccepted;
     public void nextTurn(int lastDiceFaceAccepted, int lastNumDieAccepted) {
@@ -48,20 +49,22 @@ public class AI{
 
 
     }
+    public boolean challengePlayer(int lastDiceFaceAccepted, int lastNumDieAccepted, int[] DICENUMBERS) {
+        boolean result = false;//hi
 
-    public boolean challengePlayer(int lastDiceFaceAccepted, int lastNumDieAccepted) {
-        boolean result = true;//hi
+//        Dice dice = new Dice();
+//        int[] DIECOUNT = dice.getDiceNumbers();
 
-        Dice dice = new Dice();
-        int[] DIECOUNT = dice.getDiceNumbers();
 
-        if(DIECOUNT[lastDiceFaceAccepted] < lastNumDieAccepted) {
-            result = false;
+        if(DICENUMBERS[lastDiceFaceAccepted] < lastNumDieAccepted) {
+            result = true;
         }
 
         return result;
 
     }
+
+
 
     public void easyAI() {
 

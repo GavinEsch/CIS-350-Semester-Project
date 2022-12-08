@@ -21,7 +21,7 @@ public class NewJFrame extends javax.swing.JFrame {
     String AI_Difficulty = "Easy";
     int AI_order = 2;
     final int[] DICENUMBERS = new int[25];
-    final int[] DIECOUNT = new int[7];
+    int[] DIECOUNT;
 
     //dice color change
     int RGB = 0;
@@ -100,6 +100,47 @@ public class NewJFrame extends javax.swing.JFrame {
                 playerBidDieFaceInputActionPerformed(evt);
                 AI ai_challenge = new AI();
 
+                //5% chance that the AI challenges
+                if(Math.random() * 100 < 5) {
+                    AI die = new AI();
+
+                    boolean ChallengeTF = die.challengePlayer(lastDiceFaceAccepted, lastNumDieAccepted,DIECOUNT);
+
+                    if(ChallengeTF) {
+                        JOptionPane.showMessageDialog(null, "AI " + AI_order + " Lost" );
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "AI " + AI_order + " Won");
+                    }
+
+                    RGB = 255;
+                    player2Die1.setBackground(Color.WHITE);
+                    player2Die2.setBackground(Color.WHITE);
+                    player2Die3.setBackground(Color.WHITE);
+                    player2Die4.setBackground(Color.WHITE);
+                    player2Die5.setBackground(Color.WHITE);
+
+                    player3Die1.setBackground(Color.WHITE);
+                    player3Die2.setBackground(Color.WHITE);
+                    player3Die3.setBackground(Color.WHITE);
+                    player3Die4.setBackground(Color.WHITE);
+                    player3Die5.setBackground(Color.WHITE);
+
+                    player4Die1.setBackground(Color.WHITE);
+                    player4Die2.setBackground(Color.WHITE);
+                    player4Die3.setBackground(Color.WHITE);
+                    player4Die4.setBackground(Color.WHITE);
+                    player4Die5.setBackground(Color.WHITE);
+
+                    player5Die1.setBackground(Color.WHITE);
+                    player5Die2.setBackground(Color.WHITE);
+                    player5Die3.setBackground(Color.WHITE);
+                    player5Die4.setBackground(Color.WHITE);
+                    player5Die5.setBackground(Color.WHITE);
+
+                }
+
+
                 if(AI_order == 1) {
                     JOptionPane.showMessageDialog(null, "It is your turn!");
                 }
@@ -157,15 +198,16 @@ public class NewJFrame extends javax.swing.JFrame {
                         ":\n\tDice Face = [ " + lastDiceFaceAccepted + " ]\n\tNumber of Dice = [ "
                         + lastNumDieAccepted + " ]");
             }
+
         });
 
         challengePlayer.setText("Challenge");
         challengePlayer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playerBidDieFaceInputActionPerformed(evt);
-                AI ai = new AI();
+                AI die = new AI();
 
-                boolean ChallengeTF = ai.challengePlayer(lastDiceFaceAccepted, lastNumDieAccepted);
+                boolean ChallengeTF = die.challengePlayer(lastDiceFaceAccepted, lastNumDieAccepted,DIECOUNT);
 
                 if(ChallengeTF) {
                     JOptionPane.showMessageDialog(null, "Congratulation!");
@@ -531,6 +573,8 @@ public class NewJFrame extends javax.swing.JFrame {
         Dice die = new Dice();
         setPlayerDiceImage();
 
+
+
         pack();
         setVisible(true);
     } //end of setting up gui components
@@ -586,6 +630,7 @@ public class NewJFrame extends javax.swing.JFrame {
  //       DicePic = DicePhoto();
         Dice die = new Dice();
         Icon[] DicePic = die.DicePhoto();
+        DIECOUNT = die.DICENUMBERS;
 
         player1Die1.setIcon(DicePic[0]);
         player1Die2.setIcon(DicePic[1]);
