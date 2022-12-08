@@ -50,7 +50,7 @@ public class AI{
     }
 
     public boolean challengePlayer(int lastDiceFaceAccepted, int lastNumDieAccepted) {
-        boolean result = true;
+        boolean result = true;//hi
 
         Dice dice = new Dice();
         int[] DIECOUNT = dice.getDiceNumbers();
