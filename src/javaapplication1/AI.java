@@ -17,6 +17,7 @@ public class AI{
 
         if (randPicker % 2 == 0) Inc_Choice = 0;
         else Inc_Choice = 1;
+        //aa
 
 
         if (Inc_Choice == 0) {

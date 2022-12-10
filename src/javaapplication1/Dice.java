@@ -47,7 +47,7 @@ public class Dice{
     }
     public int[] getDieNumber() {
         final int DICEARRAY_SIZE = 24;
-
+//aa
 
         final int[] DIECOUNT = new int[7];
 

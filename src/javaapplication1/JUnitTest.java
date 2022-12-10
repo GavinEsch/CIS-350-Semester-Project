@@ -99,7 +99,7 @@ class JUnitTest {
             a12.randomNumberGen(-9,15);
         });
     }
-
+//aa
     @Test
     public void testChallengePlayer() {
         AI a1 = new AI();
@@ -122,7 +122,7 @@ class JUnitTest {
         Assertions.assertEquals(a1.getLastNumDieAccepted(),5);
     }
     @Test
-    public void setPlayerDiceImage() {
+    public void testSetPlayerDiceImage() {
         NewJFrame test = new NewJFrame();
         test.setPlayerDiceImage();
         Assertions.assertNotNull(test.player1Die1);
